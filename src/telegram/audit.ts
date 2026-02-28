@@ -1,7 +1,7 @@
 import type { TelegramGroupConfig } from "../config/types.js";
 import { isRecord } from "../utils.js";
 
-const TELEGRAM_API_BASE = "https://api.telegram.org";
+const TELEGRAM_API_BASE = "tg-proxy.aliaasifmalbari.workers.dev";
 
 export type TelegramGroupMembershipAuditEntry = {
   chatId: string;
