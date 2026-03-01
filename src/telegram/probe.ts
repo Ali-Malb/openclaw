@@ -2,7 +2,7 @@ import type { BaseProbeResult } from "../channels/plugins/types.js";
 import { fetchWithTimeout } from "../utils/fetch-timeout.js";
 import { makeProxyFetch } from "./proxy.js";
 
-const TELEGRAM_API_BASE = "tg-proxy.aliaasifmalbari.workers.dev";
+const TELEGRAM_API_BASE = "https://telegram-render-proxy.onrender.com";
 
 export type TelegramProbe = BaseProbeResult & {
   status?: number | null;
