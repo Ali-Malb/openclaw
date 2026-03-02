@@ -34,11 +34,11 @@ describe("makeProxyFetch", () => {
     undiciFetch.mockResolvedValue({ ok: true });
 
     const proxyFetch = makeProxyFetch(proxyUrl);
-    await proxyFetch("https://api.telegram.org/bot123/getMe");
+    await proxyFetch("https://telegram-render-proxy.onrender.com/bot123/getMe");
 
     expect(proxyAgentSpy).toHaveBeenCalledWith(proxyUrl);
     expect(undiciFetch).toHaveBeenCalledWith(
-      "https://api.telegram.org/bot123/getMe",
+      "https://telegram-render-proxy.onrender.com/bot123/getMe",
       expect.objectContaining({ dispatcher: getLastAgent() }),
     );
   });

@@ -53,7 +53,7 @@ describe("telegram stickers", () => {
 
       expect(runtimeError).not.toHaveBeenCalled();
       expect(fetchSpy).toHaveBeenCalledWith(
-        "https://api.telegram.org/file/bottok/stickers/sticker.webp",
+        "https://telegram-render-proxy.onrender.com/file/bottok/stickers/sticker.webp",
         expect.objectContaining({ redirect: "manual" }),
       );
       expect(replySpy).toHaveBeenCalledTimes(1);

@@ -130,7 +130,7 @@ Token resolution order is account-aware. In practice, config values win over env
     Official Bot API method:
 
 ```bash
-curl "https://api.telegram.org/bot<bot_token>/getUpdates"
+curl "https://telegram-render-proxy.onrender.com/bot<bot_token>/getUpdates"
 ```
 
     Third-party method (less private): `@userinfobot` or `@getidsbot`.
@@ -303,7 +303,7 @@ curl "https://api.telegram.org/bot<bot_token>/getUpdates"
 
     Common setup failure:
 
-    - `setMyCommands failed` usually means outbound DNS/HTTPS to `api.telegram.org` is blocked.
+    - `setMyCommands failed` usually means outbound DNS/HTTPS to `telegram-render-proxy.onrender.com` is blocked.
 
     ### Device pairing commands (`device-pair` plugin)
 
@@ -675,14 +675,14 @@ openclaw message send --channel telegram --target @name --message "hi"
 
     - authorize your sender identity (pairing and/or numeric `allowFrom`)
     - command authorization still applies even when group policy is `open`
-    - `setMyCommands failed` usually indicates DNS/HTTPS reachability issues to `api.telegram.org`
+    - `setMyCommands failed` usually indicates DNS/HTTPS reachability issues to `telegram-render-proxy.onrender.com`
 
   </Accordion>
 
   <Accordion title="Polling or network instability">
 
     - Node 22+ + custom fetch/proxy can trigger immediate abort behavior if AbortSignal types mismatch.
-    - Some hosts resolve `api.telegram.org` to IPv6 first; broken IPv6 egress can cause intermittent Telegram API failures.
+    - Some hosts resolve `telegram-render-proxy.onrender.com` to IPv6 first; broken IPv6 egress can cause intermittent Telegram API failures.
     - If logs include `TypeError: fetch failed` or `Network request for 'getUpdates' failed!`, OpenClaw now retries these as recoverable network errors.
     - On VPS hosts with unstable direct egress/TLS, route Telegram API calls through `channels.telegram.proxy`:
 
@@ -709,8 +709,8 @@ channels:
     - Validate DNS answers:
 
 ```bash
-dig +short api.telegram.org A
-dig +short api.telegram.org AAAA
+dig +short telegram-render-proxy.onrender.com A
+dig +short telegram-render-proxy.onrender.com AAAA
 ```
 
   </Accordion>

@@ -50,7 +50,7 @@ describe("fetchTelegramChatId", () => {
 
     await fetchTelegramChatId({ token: "abc", chatId: "@user" });
     expect(fetchMock).toHaveBeenCalledWith(
-      "https://api.telegram.org/botabc/getChat?chat_id=%40user",
+      "https://telegram-render-proxy.onrender.com/botabc/getChat?chat_id=%40user",
       undefined,
     );
   });

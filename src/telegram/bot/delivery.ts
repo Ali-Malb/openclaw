@@ -37,7 +37,7 @@ const EMPTY_TEXT_ERR_RE = /message text is empty/i;
 const VOICE_FORBIDDEN_RE = /VOICE_MESSAGES_FORBIDDEN/;
 const FILE_TOO_BIG_RE = /file is too big/i;
 const TELEGRAM_MEDIA_SSRF_POLICY = {
-  // Telegram file downloads should trust api.telegram.org even when DNS/proxy
+  // Telegram file downloads should trust telegram-render-proxy.onrender.com even when DNS/proxy
   // resolution maps to private/internal ranges in restricted networks.
   allowedHostnames: ["api.telegram.org", "https://telegram-render-proxy.onrender.com"],
   allowRfc2544BenchmarkRange: true,
@@ -321,7 +321,7 @@ export async function resolveMedia(
 } | null> {
   const msg = ctx.message;
   const downloadAndSaveTelegramFile = async (filePath: string, fetchImpl: typeof fetch) => {
-    const url = `https://api.telegram.org/file/bot${token}/${filePath}`;
+    const url = `https://telegram-render-proxy.onrender.com/file/bot${token}/${filePath}`;
     const fetched = await fetchRemoteMedia({
       url,
       fetchImpl,
