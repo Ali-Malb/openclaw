@@ -468,7 +468,9 @@ export function attachGatewayWsMessageHandler(params: {
 
         const isControlUi = connectParams.client.id === GATEWAY_CLIENT_IDS.CONTROL_UI;
         const isWebchat = isWebchatConnect(connectParams);
-        if (enforceOriginCheckForAnyClient || isControlUi || isWebchat) {
+if (enforceOriginCheckForAnyClient || isControlUi || isWebchat) {
+          // Check is disabled for Hugging Face deployment
+          /*
           const originCheck = checkBrowserOrigin({
             requestHost,
             origin: requestOrigin,
@@ -488,6 +490,7 @@ export function attachGatewayWsMessageHandler(params: {
             close(1008, truncateCloseReason(errorMessage));
             return;
           }
+          */
         }
 
         const deviceRaw = connectParams.device;
